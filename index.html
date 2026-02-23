@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>TaskFlow Dashboard</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- Toast Notification -->
+
+    <div id="toast"></div>
+
+    <div class="layout">
+      <!-- Sidebar -->
+
+      <aside class="sidebar">
+        <h2 class="logo">TaskFlow</h2>
+
+        <ul>
+          <li class="active">Dashboard</li>
+
+          <li>Tasks</li>
+
+          <li>Analytics</li>
+
+          <li>Settings</li>
+        </ul>
+      </aside>
+
+      <!-- Main Content -->
+
+      <main class="main">
+        <!-- Topbar -->
+
+        <div class="topbar">
+          <input type="text" id="searchInput" placeholder="Search tasks..." />
+
+          <button id="darkModeToggle">🌙</button>
+        </div>
+
+        <!-- Welcome Section -->
+
+        <div class="welcome">
+          <h2>Welcome back 👋</h2>
+
+          <p class="subtitle">
+            Manage your tasks efficiently with TaskFlow Dashboard
+          </p>
+        </div>
+
+        <!-- Stats Cards -->
+
+        <div class="cards">
+          <div class="card">
+            <h3>Total Tasks</h3>
+
+            <p id="totalTasks">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Completed</h3>
+
+            <p id="completedTasks">0</p>
+          </div>
+
+          <div class="card">
+            <h3>Pending</h3>
+
+            <p id="pendingTasks">0</p>
+          </div>
+        </div>
+
+        <!-- Add Task Section -->
+
+        <div class="add-task">
+          <input type="text" id="taskInput" placeholder="Enter your task" />
+
+          <select id="categorySelect">
+            <option value="Study">Study</option>
+
+            <option value="Work">Work</option>
+
+            <option value="Personal">Personal</option>
+
+            <option value="Health">Health</option>
+
+            <option value="Other">Other</option>
+          </select>
+
+          <select id="prioritySelect">
+            <option value="Low">Low Priority</option>
+
+            <option value="Medium">Medium Priority</option>
+
+            <option value="High">High Priority</option>
+          </select>
+
+          <input type="date" id="dueDate" />
+
+          <button id="addBtn">Add Task</button>
+        </div>
+
+        <!-- Filter Section -->
+
+        <div class="filter-section">
+          <button class="filter-btn" data-filter="all">All</button>
+
+          <button class="filter-btn" data-filter="pending">Pending</button>
+
+          <button class="filter-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <!-- Task List -->
+
+        <ul id="taskList"></ul>
+
+        <!-- Empty Message -->
+
+        <div id="emptyMessage" class="empty-message">
+          You're all caught up 🎉
+        </div>
+
+        <!-- Clear All Button -->
+
+        <button id="clearAllBtn">Clear All Tasks</button>
+      </main>
+    </div>
+
+    <!-- JavaScript -->
+
+    <script src="app.js"></script>
+  </body>
+</html>
