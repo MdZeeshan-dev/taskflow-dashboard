@@ -26,13 +26,10 @@ const darkBtn = document.getElementById("darkModeToggle");
 
 const toast = document.getElementById("toast");
 
-// ===== DATA =====
 
 let tasks = [];
 
 let currentFilter = "all";
-
-// ===== LOAD TASKS FROM STORAGE =====
 
 const loadTasks = () => {
   const data = localStorage.getItem("taskflowTasks");
@@ -42,13 +39,9 @@ const loadTasks = () => {
   }
 };
 
-// ===== SAVE TASKS =====
-
 const saveTasks = () => {
   localStorage.setItem("taskflowTasks", JSON.stringify(tasks));
 };
-
-// ===== SHOW TOAST =====
 
 const showToast = (message) => {
   toast.textContent = message;
