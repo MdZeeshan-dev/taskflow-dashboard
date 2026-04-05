@@ -91,8 +91,6 @@ addBtn.addEventListener("click", () => {
   dueDateInput.value = "";
 });
 
-// ===== RENDER TASKS =====
-
 const renderTasks = () => {
   taskList.innerHTML = "";
 
@@ -155,8 +153,6 @@ const renderTasks = () => {
 
   updateStats();
 };
-
-// ===== UPDATE STATS =====
 
 const updateStats = () => {
   const total = tasks.length;
