@@ -53,8 +53,6 @@ const showToast = (message) => {
   }, 2000);
 };
 
-// ===== ADD TASK =====
-
 addBtn.addEventListener("click", () => {
   const text = taskInput.value.trim();
 
