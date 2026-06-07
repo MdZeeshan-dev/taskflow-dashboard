@@ -1,7 +1,3 @@
-// ===== TASKFLOW DASHBOARD FINAL JS =====
-
-// ===== GET ELEMENTS =====
-
 const taskInput = document.getElementById("taskInput");
 const addBtn = document.getElementById("addBtn");
 const taskList = document.getElementById("taskList");
@@ -25,7 +21,6 @@ const emptyMessage = document.getElementById("emptyMessage");
 const darkBtn = document.getElementById("darkModeToggle");
 
 const toast = document.getElementById("toast");
-
 
 let tasks = [];
 
@@ -168,8 +163,6 @@ const updateStats = () => {
   pendingTasksEl.textContent = pending;
 };
 
-// ===== DELETE & EDIT =====
-
 taskList.addEventListener("click", (e) => {
   const id = Number(e.target.dataset.id);
 
@@ -204,8 +197,6 @@ taskList.addEventListener("click", (e) => {
   }
 });
 
-// ===== COMPLETE TASK =====
-
 taskList.addEventListener("change", (e) => {
   if (e.target.classList.contains("complete-checkbox")) {
     const id = Number(e.target.dataset.id);
@@ -222,8 +213,6 @@ taskList.addEventListener("change", (e) => {
   }
 });
 
-// ===== SEARCH =====
-
 searchInput.addEventListener("keyup", () => {
   const value = searchInput.value.toLowerCase();
 
@@ -236,8 +225,6 @@ searchInput.addEventListener("keyup", () => {
   });
 });
 
-// ===== FILTER =====
-
 filterBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     currentFilter = btn.dataset.filter;
@@ -245,8 +232,6 @@ filterBtns.forEach((btn) => {
     renderTasks();
   });
 });
-
-// ===== CLEAR ALL =====
 
 clearAllBtn.addEventListener("click", () => {
   if (!confirm("Clear all tasks?")) return;
@@ -259,8 +244,6 @@ clearAllBtn.addEventListener("click", () => {
 
   showToast("All tasks cleared");
 });
-
-// ===== DARK MODE =====
 
 const savedMode = localStorage.getItem("taskflowDarkMode");
 
@@ -279,8 +262,6 @@ darkBtn.addEventListener("click", () => {
 
   darkBtn.textContent = isDark ? "☀️" : "🌙";
 });
-
-// ===== START =====
 
 loadTasks();
 
